@@ -1,12 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="js.js">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>javascript practice</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velen Ambalam - Real Estate</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: url('') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+    h1, h2, p {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    nav {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+    .section {
+      padding: 80px 20px 20px;
+    }
+    .about p {
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .scroller {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .scroller img {
+      height: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    .scroller::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroller::-webkit-scrollbar-thumb {
+      background: #007BFF;
+      border-radius: 5px;
+    }
+    .contact {
+      text-align: center;
+      padding: 20px;
+    }
+    .contact a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .social-buttons-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+
+        /* Style the social buttons */
+        .social-buttons a {
+            display: inline-block;
+            width: 50px; /* Set width */
+            height: 50px; /* Set height */
+            line-height: 50px; /* Center the text vertically */
+            text-align: center; /* Center the text horizontally */
+            border-radius: 5px; /* Optional: rounded corners */
+            font-size: 20px; /* Adjust the size of the text */
+            color: white; /* Text color */
+            background-color: #25D366; /* WhatsApp background color, you can change it for other buttons */
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 0 10px; /* Add space between buttons */
+        }
+
+        .social-buttons a:hover {
+            background-color: #128C7E; /* Hover effect for WhatsApp, change this for other buttons */
+        }
+
+        /* Different colors for each button */
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .instagram {
+            background-color: #C13584;
+        }
+
+        .zillow {
+            background-color: #2F5B6E;
+        }
+
+    /* Mortgage Calculator */
+    .mortgage-calculator {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .mortgage-calculator label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .mortgage-calculator input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .mortgage-calculator button {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .mortgage-calculator button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    hello javscript
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#houses">Houses</a></li>
+      <li><a href="https://wa.me/+16125783536">Contact</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <h1>Velen Ambalam</h1>
+    <p>More Info On Zillow</p>
+  </section>
+
+  <!-- Image Scroller Section -->
+  <section id="houses" class="section houses">
+    <h2>Explore Our Properties</h2>
+    <div class="scroller">
+        <a href="https://www.zillow.com/homedetails/780-Ali-Ln-Victoria-MN-55386/64509586_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/5ddb29e8e66553d0a1655c504c09a728-cc_ft_768.webp" alt="House 1">
+          </a>
+          <a href="https://www.zillow.com/homedetails/5060-Holly-Ln-N-102-Plymouth-MN-55446/64499479_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/509743fecf9fc5bf01807d9b7dd5d271-cc_ft_576.webp" alt="House 2">
+          </a>
+          <a href="https://www.zillow.com/homedetails/3477-Chestnut-Ln-Eagan-MN-55123/124176633_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/2a44db558013400f94f4f1db6ba04a84-cc_ft_576.webp" alt="House 3">
+          </a>
+          <a href="https://www.zillow.com/homedetails/5035-Holly-Ln-N-401-Plymouth-MN-55446/61621703_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/30c3b660315e6d3648c94160b5da6497-cc_ft_576.webp" alt="House 4">
+          </a>
+          <a href="https://www.zillow.com/homedetails/4892-Bluff-Heights-Trl-SE-Prior-Lake-MN-55372/61126489_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/3361c0fc90d02b4f5c4b98afb9fa289f-cc_ft_576.webp" alt="House 5">
+          </a>
+          <a href="https://www.zillow.com/homedetails/7052-S-Park-Dr-Savage-MN-55378/64895343_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/23e38814d480b096923f148c69304a86-cc_ft_576.webp" alt="House 6">
+          </a>
+          <a href="https://www.zillow.com/homedetails/13263-Maryland-Ave-Savage-MN-55378/2185311_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/b6456a57898614d9adebb2ff8d7c4e15-cc_ft_576.webp" alt="House 7">
+          </a>
+          <a href="https://www.zillow.com/homedetails/14240-Parkview-Ln-NW-Prior-Lake-MN-55372/68283540_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/2ea67d9a66dfaf9964a99d5dddc5c4b6-cc_ft_576.webp" alt="House 8">
+          </a>
+          <a href="https://www.zillow.com/homedetails/1004-Traditions-Trl-Chaska-MN-55318/64635252_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/13e9f64a0cce0aeed25fb58610575395-cc_ft_576.webp" alt="House 9">
+          </a>
+          <a href="https://www.zillow.com/homedetails/5040-Holly-Ln-N-UNIT-3-Plymouth-MN-55446/2102732518_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/ee6cacb5c577ba99596489d31ed81005-cc_ft_576.webp" alt="House 10">
+          </a>
+          <a href="https://www.zillow.com/homedetails/1558-Baylor-Ct-Eagan-MN-55122/1633048_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/7aad2a38f701604896acc1fcdeb79092-cc_ft_576.webp" alt="House 11">
+          </a>
+          <a href="https://www.zillow.com/homedetails/3155-Coachman-Rd-APT-310-Eagan-MN-55121/1622250_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/8b06876e85c920ef06f6cd078b3dca1c-cc_ft_576.webp" alt="House 12">
+          </a>
+          <a href="https://www.zillow.com/homedetails/15649-Chestnut-Way-Rosemount-MN-55068/52621126_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/68f598bedc76780c7192dc2f96070d32-cc_ft_960.webp" alt="House 13">
+          </a>
+          <a href="https://www.zillow.com/homedetails/6782-Narcissus-Ln-N-Maple-Grove-MN-55311/67876023_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/edfaad55e580e7a69d7ef9ef8c8b562d-cc_ft_960.webp" alt="House 14">
+          </a>
+          <a href="https://www.zillow.com/homedetails/4815-Jewel-Ln-N-UNIT-B-Plymouth-MN-55446/58624258_zpid/">
+            <img src="https://photos.zillowstatic.com/fp/4c95201bd08db068c71a2b427589b753-cc_ft_576.webp" alt="House 15">
+          </a>
+          
+    </div>
+  </section>
+
+  <!-- Social Media Buttons -->
+<section class="social-buttons">
+    <a href="https://wa.me/+16125783536" class="whatsapp" target="_blank" title="WhatsApp">W</a>
+    <a href="https://www.facebook.com/people/Velen-Ambalam/61551050182977" class="facebook" target="_blank" title="Facebook">F</a>
+    <a href="https://www.instagram.com/minnesota_realtor_velen/" class="instagram" target="_blank" title="Instagram">I</a>
+    <a href="https://www.zillow.com/profile/velen%20realtor" class="zillow" target="_blank" title="Zillow">Z</a>
+  </section>
+  
+
+  <!--houses only-->
+
+  <!-- Mortgage Calculator -->
+  <section id="mortgage-calculator" class="section mortgage-calculator">
+    <h2>Mortgage Calculator</h2>
+    <label for="home-price">Home Price ($)</label>
+    <input type="number" id="home-price" placeholder="Enter home price">
+    <label for="down-payment">Down Payment ($)</label>
+    <input type="number" id="down-payment" placeholder="Enter down payment">
+    <label for="interest-rate">Interest Rate (%)</label>
+    <input type="number" id="interest-rate" placeholder="Enter interest rate">
+    <label for="loan-term">Loan Term (Years)</label>
+    <input type="number" id="loan-term" placeholder="Enter loan term">
+    <button onclick="calculateMortgage()">Calculate</button>
+    <p class="result" id="mortgage-result"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Velen Ambalam Real Estate. All rights reserved.</p>
+  </footer>
+
+  <!-- Mortgage Calculator Script -->
+  <script>
+    function calculateMortgage() {
+      const price = parseFloat(document.getElementById('home-price').value);
+      const downPayment = parseFloat(document.getElementById('down-payment').value);
+      const interestRate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
+      const loanTerm = parseInt(document.getElementById('loan-term').value) * 12;
+
+      const principal = price - downPayment;
+      const monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+      
+      if (!isNaN(monthlyPayment)) {
+        document.getElementById('mortgage-result').innerText = `Monthly Payment: $${monthlyPayment.toFixed(2)}`;
+      } else {
+        document.getElementById('mortgage-result').innerText = "Please fill in all fields correctly.";
+      }
+    }
+  </script>
 </body>
 </html>
